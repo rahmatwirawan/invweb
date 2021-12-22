@@ -10,12 +10,12 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -165,9 +165,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../index3.html" class="brand-link">
-                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">InvWeb</span>
             </a>
 
             <!-- Sidebar -->
@@ -175,23 +175,11 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
-                </div>
-
-                <!-- SidebarSearch Form -->
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
+                        <a href="#" class="d-block">Rahmat Wirawan</a>
                     </div>
                 </div>
 
@@ -200,37 +188,74 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
+
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <a href="{{url('./')}}" class="nav-link">
+                                <i class="nav-icon fas fa-laptop"></i>
                                 <p>
                                     Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-database"></i>
+                                <p>
+                                    Master Data
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
+                                    <a href="{{url('./supplier')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
+                                        <p>Data Supplier</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../index2.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
+                                        <p>Satuan Barang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="../../index3.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
+                                        <p>Kategori Barang</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../index3.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Barang</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-item">
+                            <a href="../../index3.html" class="nav-link">
+                                <i class="nav-icon fas fa-warehouse"></i>
+                                <p>Gudang</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../gallery.html" class="nav-link">
+                                <i class="nav-icon fas fa-balance-scale"></i>
+                                <p>
+                                    Pembelian
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../gallery.html" class="nav-link">
+                                <i class="nav-icon fas fa-cart-plus"></i>
+                                <p>
+                                    Penjualan
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -262,11 +287,10 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="dist/js/adminlte.min.js"></script>
-    <script src="dist/js/demo.js"></script>
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('dist/js/demo.js') }}"></script>
 </body>
 
 </html>
