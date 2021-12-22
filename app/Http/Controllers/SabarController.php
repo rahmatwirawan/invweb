@@ -49,7 +49,7 @@ class SabarController extends Controller
 
         if ($sab) {
             return redirect()
-                ->route('nama_satuan.index')
+                ->route('sabar.index')
                 ->with([
                     'success' => 'Data Satuan Baru has been created successfully'
                 ]);
