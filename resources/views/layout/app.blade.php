@@ -198,8 +198,8 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item {{ (request()->is('supplier*','sabar*','kabar*')) ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ (request()->is('supplier*','sabar*')) ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-database"></i>
                                 <p>
                                     Master Data
@@ -208,19 +208,22 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{url('./supplier')}}" class="nav-link">
+                                    <a href="{{url('./supplier')}}"
+                                        class="nav-link {{ (request()->is('supplier*')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Supplier</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('./sabar') }}" class="nav-link">
+                                    <a href="{{ url('./sabar') }}"
+                                        class="nav-link {{ (request()->is('sabar*')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Satuan Barang</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
+                                    <a href="{{ url('./kabar') }}"
+                                        class="nav-link {{ (request()->is('kabar*')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Kategori Barang</p>
                                     </a>
