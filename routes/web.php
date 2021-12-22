@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SabarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('supplier', SupplierController::class);
+Route::resource('sabar', SabarController::class);

@@ -1,18 +1,18 @@
 @extends('layout.app')
 
-@section('title', 'Supplier')
+@section('title', 'Satuan Barang')
 
 @section('content-header')
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Supplier</h1>
+                <h1>Satuan Barang</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Supplier</li>
+                    <li class="breadcrumb-item active">Satuan Barang</li>
                 </ol>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <h3 class="card-title">Title</h3>
 
             <div class="card-tools">
-                <a class="btn btn-success" href="{{ route('supplier.create') }}"> Input Supplier</a>
+                <a class="btn btn-success" href="{{ route('sabar.create') }}"> Input Satuan Barang</a>
             </div>
         </div>
         @if (session('success'))
@@ -47,25 +47,19 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">#</th>
-                        <th>Nama Supplier</th>
-                        <th>Alamat Supplier</th>
-                        <th>Telp. Supplier</th>
-                        <th>Fax</th>
-                        <th>Action</th>
+                        <th>Nama Satuan</th>
+                        <th style="width: 40px">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($query as $supplier)
+                    @foreach ($query as $sabar)
                     <tr>
                         <td class="text-center">{{ ++$i }}</td>
-                        <td>{{ $supplier->nm_supplier }}</td>
-                        <td>{{ $supplier->alamat }}</td>
-                        <td>{{ $supplier->telp }}</td>
-                        <td>{{ $supplier->fax_supplier }}</td>
+                        <td>{{ $sabar->nama_satuan }}</td>
                         <td class="text-center" style="width: 80px">
-                            <form action="{{ route('supplier.destroy',$supplier->id) }}" method="POST">
+                            <form action="{{ route('sabar.destroy',$sabar->id) }}" method="POST">
 
-                                <a class="btn btn-primary btn-xs" href="{{ route('supplier.edit',$supplier->id) }}"> <i
+                                <a class="btn btn-primary btn-xs" href="{{ route('sabar.edit',$sabar->id) }}"> <i
                                         class="fas fa-pencil-alt"></i></a>
 
                                 @csrf
