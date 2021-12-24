@@ -198,7 +198,8 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item {{ (request()->is('supplier*','sabar*','kabar*')) ? 'menu-open' : '' }}">
+                        <li
+                            class="nav-item {{ (request()->is('supplier*','sabar*','kabar*','data_barang*')) ? 'menu-open' : '' }}">
                             <a href="#" class="nav-link {{ (request()->is('supplier*','sabar*')) ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-database"></i>
                                 <p>
@@ -229,7 +230,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
+                                    <a href="{{ url('./data_barang') }}"
+                                        class="nav-link {{ (request()->is('data_barang*')) ? 'active' : '' }}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Barang</p>
                                     </a>

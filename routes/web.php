@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KabarController;
 use App\Http\Controllers\SabarController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\SupplierController;
 
 /*
@@ -23,3 +24,4 @@ Route::get('/', function () {
 Route::resource('supplier', SupplierController::class);
 Route::resource('sabar', SabarController::class);
 Route::resource('kabar', KabarController::class);
+Route::resource('data_barang', BarangController::class);
